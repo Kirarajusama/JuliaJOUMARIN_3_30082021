@@ -1,0 +1,69 @@
+div.title {
+  box-shadow: 0 0 5px rgba(0,0,0,.5);
+  position: relative;
+
+  h1 {
+    font-family: 'Shrikhand', cursive;
+  }
+}
+
+footer {
+  a {
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+
+  .title {
+    font-family: 'Shrikhand', cursive;
+    margin: 0;
+  }
+}
+.new {
+  background-color: $tertiaire;
+  color: #1b6150;
+  width: 70px;
+}
+
+.fa-heart {
+  color: #000;
+  transform: scale(1);
+  transition: transform 500ms;
+
+  &:hover {
+    background: linear-gradient(to bottom left, #9356dc, #ff79da);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 0;
+    transform: scale(1.15);
+  }
+}
+
+/* Vérification si le navigateur supporte la méthode -webkit-text-stroke */
+@supports (-webkit-text-stroke: 2px black) {
+  .fa-heart {
+    -webkit-text-stroke: 2px black;
+    -webkit-text-fill-color: $fond;
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-secondary {
+  color: darken($fond, 75%);
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

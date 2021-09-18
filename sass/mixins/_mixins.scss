@@ -1,0 +1,41 @@
+@mixin radius($size) {
+  -webkit-border-radius: $size;
+  -moz-border-radius: $size;
+  border-radius: $size;
+}
+
+@mixin transition($time, $elements: (all)) {
+  -webkit-transition-property: $elements;
+  -moz-transition-property: $elements;
+  -ms-transition-property: $elements;
+  -o-transition-property: $elements;
+  transition-property: $elements;
+
+  -webkit-transition-duration: $time;
+  -moz-transition-duration: $time;
+  -ms-transition-duration: $time;
+  -o-transition-duration: $time;
+  transition-duration: $time;
+}
+
+@mixin shadow($x, $y, $blur, $color, $inset: '') {
+  box-shadow: $x $y $blur $color unquote($inset);
+  -webkit-box-shadow: $x $y $blur $color unquote($inset);
+  -moz-box-shadow: $x $y $blur $color unquote($inset);
+  -o-box-shadow: $x $y $blur $color unquote($inset);
+}
+
+@mixin flex() {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  flex: 0 1 auto;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}

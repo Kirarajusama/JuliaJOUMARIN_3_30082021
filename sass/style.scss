@@ -1,0 +1,82 @@
+@import "variables",
+"mixins/mixins",
+"components/typo",
+"components/button",
+"components/grid",
+"components/card",
+"components/helper";
+
+/******************
+ * Custom rules
+ ******************/
+
+/* reset */
+*, *:after, *:before {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: $fondBody;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+/* chargement de page */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg);}
+}
+
+@keyframes hideOverlay {
+  0% { visibility: visible }
+  100% { visibility: hidden }
+}
+
+.loader {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  animation: hideOverlay $loader_animation_duration linear both;
+  -o-animation: hideOverlay $loader_animation_duration linear both; /* Opera */
+  -moz-animation: hideOverlay $loader_animation_duration linear both; /* Firefox */
+  -webkit-animation: hideOverlay $loader_animation_duration linear both; /* Safari */
+  background: rgba(0,0,0,.5);
+
+  .spinner {
+    margin: auto;
+    width: 120px;
+    height: 120px;
+    animation: spin $loader_animation_duration linear both;
+    -o-animation: spin $loader_animation_duration linear both; /* Opera */
+    -moz-animation: spin $loader_animation_duration linear both; /* Firefox */
+    -webkit-animation: spin $loader_animation_duration linear both; /* Safari */
+    @include radius(50%);
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid $primaire;
+    border-right: 16px solid $secondaire;
+    border-bottom: 16px solid $tertiaire;
+  }
+}
+
+.emplacement {
+  background: darken($fond, 4%);
+}
+
+img{
+  max-width: 100%;
+}
+
+footer {
+  background: #353535;
+  color: #FFFFFF;
+}
+

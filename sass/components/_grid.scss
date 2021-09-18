@@ -1,0 +1,29 @@
+.container {
+  max-width: $bp_xs;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.row {
+  padding: 40px 15px;
+
+  &.inverted {
+    background: $fond;
+  }
+}
+
+.flex {
+  @include flex;
+
+  &.middle-align {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  &.between-align {
+    /*-webkit-box-pack: justify;
+    -ms-flex-pack: justify;*/
+    justify-content: space-between;
+  }
+}
