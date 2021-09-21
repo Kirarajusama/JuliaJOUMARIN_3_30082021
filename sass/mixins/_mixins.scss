@@ -1,7 +1,12 @@
-@mixin radius($size) {
-  -webkit-border-radius: $size;
-  -moz-border-radius: $size;
-  border-radius: $size;
+@mixin radius($size, $corner: '') {
+  $property: 'border-radius';
+
+  @if ($corner != '') {
+    $property: 'border-'+ $corner + '-radius';
+  }
+  #{'-webkit-' + $property}: $size;
+  #{'-moz-' + $property}: $size;
+  $property: $size;
 }
 
 @mixin transition($time, $elements: (all)) {

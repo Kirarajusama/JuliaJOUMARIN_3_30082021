@@ -2,6 +2,14 @@ div.title {
   box-shadow: 0 0 5px rgba(0,0,0,.5);
   position: relative;
 
+  .fa-arrow-left {
+    position: absolute;
+    font-size: 1.2rem;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+  }
+
   h1 {
     font-family: 'Shrikhand', cursive;
   }

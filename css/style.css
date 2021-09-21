@@ -4,9 +4,17 @@
 /* COLORS */
 /* BREAKPOINTS */
 /* LOADER */
+/*  */
 div.title {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   position: relative;
+}
+div.title .fa-arrow-left {
+  position: absolute;
+  font-size: 1.2rem;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
 }
 div.title h1 {
   font-family: "Shrikhand", cursive;
@@ -85,7 +93,6 @@ a {
   background: linear-gradient(#FF79DA, #9356DC);
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
-  border-radius: 30px;
   color: white;
   -webkit-transition-property: all;
   -moz-transition-property: all;
@@ -146,13 +153,19 @@ a {
   -ms-flex-align: center;
   align-items: center;
 }
+.flex.end-align {
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: end;
+}
 .flex.between-align {
-  /*-webkit-box-pack: justify;
-  -ms-flex-pack: justify;*/
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
 .card {
+  background: #FFF;
   overflow: hidden;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
@@ -160,7 +173,6 @@ a {
   -o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
-  border-radius: 20px;
   position: relative;
   -webkit-transition-property: all;
   -moz-transition-property: all;
@@ -189,7 +201,6 @@ a {
   background: #99e2d0;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
-  border-radius: 4px;
   color: #1b6150;
   font-weight: 400;
 }
@@ -209,7 +220,6 @@ a {
   text-align: center;
   -webkit-border-radius: 40px;
   -moz-border-radius: 40px;
-  border-radius: 40px;
   padding: 2px 5px;
   height: 22px;
   width: 22px;
@@ -545,7 +555,6 @@ html, body {
   /* Safari */
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
-  border-radius: 50%;
   border: 16px solid #f3f3f3;
   border-top: 16px solid #9356DC;
   border-right: 16px solid #FF79DA;
@@ -563,6 +572,135 @@ img {
 footer {
   background: #353535;
   color: #FFFFFF;
+}
+
+.cart {
+  position: relative;
+  background: #F6F6F6;
+  -webkit-border-top-right-radius: 30px;
+  -moz-border-top-right-radius: 30px;
+  -webkit-border-top-left-radius: 30px;
+  -moz-border-top-left-radius: 30px;
+  margin-top: -40px;
+}
+.cart h2.title {
+  font-family: "Shrikhand", cursive;
+}
+.cart h3 {
+  position: relative;
+  font-weight: 300;
+}
+.cart h3:before {
+  bottom: -4px;
+  left: 0;
+  content: "";
+  width: 35px;
+  position: absolute;
+  border: 2px solid #99E2D0;
+}
+.cart p, .cart .card-body, .cart .cart-content {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.cart-content {
+  flex: 1;
+}
+.cart-price {
+  padding-left: 5px;
+}
+.cart .card-body {
+  overflow: hidden;
+  flex: 1;
+  flex-wrap: nowrap;
+}
+.cart .card-confirm {
+  margin-right: -64px;
+  width: 4rem;
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  flex: 0 1 auto;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -ms-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -ms-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  background: #99E2D0;
+}
+.cart .card-confirm .fas {
+  color: #99E2D0;
+  height: 1.6rem;
+  width: 1.6rem;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  transform: rotate(180deg);
+  transition-duration: 0.5s;
+}
+.cart .card:hover .card-confirm {
+  margin: 0;
+}
+.cart .card:hover .card-confirm .fas {
+  transform: rotate(0deg);
+}
+
+@keyframes fadeIn {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.cart-item:nth-child(1) {
+  animation: fadeIn 0.5s linear both;
+  -o-animation: fadeIn 0.5s linear both;
+  -moz-animation: fadeIn 0.5s linear both;
+  -webkit-animation: fadeIn 0.5s linear both;
+}
+.cart-item:nth-child(2) {
+  animation: fadeIn 1s linear both;
+  -o-animation: fadeIn 1s linear both;
+  -moz-animation: fadeIn 1s linear both;
+  -webkit-animation: fadeIn 1s linear both;
+}
+.cart-item:nth-child(3) {
+  animation: fadeIn 1.5s linear both;
+  -o-animation: fadeIn 1.5s linear both;
+  -moz-animation: fadeIn 1.5s linear both;
+  -webkit-animation: fadeIn 1.5s linear both;
+}
+.cart-item:nth-child(4) {
+  animation: fadeIn 2s linear both;
+  -o-animation: fadeIn 2s linear both;
+  -moz-animation: fadeIn 2s linear both;
+  -webkit-animation: fadeIn 2s linear both;
 }
 
 /*# sourceMappingURL=style.css.map */

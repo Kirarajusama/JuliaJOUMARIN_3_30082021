@@ -80,3 +80,95 @@ footer {
   color: #FFFFFF;
 }
 
+.cart {
+  position: relative;
+  background: $fond;
+  @include radius(30px, 'top-right');
+  @include radius(30px, 'top-left');
+  margin-top: -40px;
+
+  h2.title {
+    font-family: 'Shrikhand', cursive;
+  }
+
+  h3 {
+    position: relative;
+    font-weight: 300;
+    &:before {
+      bottom: -4px;
+      left: 0;
+      content: '';
+      width: 35px;
+      position: absolute;
+      border: 2px solid $tertiaire;
+    }
+  }
+
+  p, .card-body, .cart-content {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  &-content {
+    flex: 1;
+  }
+
+  &-price {
+    padding-left: 5px;
+  }
+
+  .card-body {
+    overflow: hidden;
+    flex: 1;
+    flex-wrap: nowrap;
+  }
+
+  .card-confirm {
+    margin-right: -64px;
+    width: 4rem;
+    @include flex;
+    align-items: center;
+    justify-content: center;
+    @include transition(.5s);
+    background: $tertiaire;
+
+    .fas {
+      color: $tertiaire;
+      height: 1.6rem;
+      width: 1.6rem;
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 100px;
+      transform: rotate(180deg);
+      transition-duration: .5s;
+    }
+  }
+
+  .card:hover .card-confirm {
+    margin: 0;
+    .fas {
+      transform: rotate(0deg);
+    }
+  }
+}
+
+@keyframes fadeIn {
+  0% {transform:scale(0)}
+  50% {transform:scale(1.1)}
+  100% {transform:scale(1)}
+}
+
+
+.cart-item {
+  @for $i from 1 through 4 {
+    &:nth-child(#{$i}) {
+      animation: fadeIn $i * (1s / $cart_animation_duration) linear both;
+      -o-animation: fadeIn $i * (1s / $cart_animation_duration) linear both;
+      -moz-animation: fadeIn $i * (1s / $cart_animation_duration) linear both;
+      -webkit-animation: fadeIn $i * (1s / $cart_animation_duration) linear both;
+    }
+  }
+}

@@ -21,9 +21,15 @@
     align-items: center;
   }
 
+  &.end-align {
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: end;
+  }
+
   &.between-align {
-    /*-webkit-box-pack: justify;
-    -ms-flex-pack: justify;*/
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
   }
 }
