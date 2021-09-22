@@ -4,7 +4,7 @@
 /* COLORS */
 /* BREAKPOINTS */
 /* LOADER */
-/*  */
+/* CART */
 div.title {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   position: relative;
@@ -255,7 +255,7 @@ a {
 }
 
 .m-r-0 {
-  margin-bottom: 0em;
+  margin-right: 0em;
 }
 
 /* Padding */
@@ -297,7 +297,7 @@ a {
 }
 
 .m-r-1 {
-  margin-bottom: 0.45em;
+  margin-right: 0.45em;
 }
 
 /* Padding */
@@ -339,7 +339,7 @@ a {
 }
 
 .m-r-2 {
-  margin-bottom: 0.9em;
+  margin-right: 0.9em;
 }
 
 /* Padding */
@@ -381,7 +381,7 @@ a {
 }
 
 .m-r-3 {
-  margin-bottom: 1.35em;
+  margin-right: 1.35em;
 }
 
 /* Padding */
@@ -423,7 +423,7 @@ a {
 }
 
 .m-r-4 {
-  margin-bottom: 1.8em;
+  margin-right: 1.8em;
 }
 
 /* Padding */
@@ -465,7 +465,7 @@ a {
 }
 
 .m-r-5 {
-  margin-bottom: 2.25em;
+  margin-right: 2.25em;
 }
 
 /* Padding */
@@ -597,6 +597,7 @@ footer {
   width: 35px;
   position: absolute;
   border: 2px solid #99E2D0;
+  background-color: #99E2D0;
 }
 .cart p, .cart .card-body, .cart .cart-content {
   white-space: nowrap;
