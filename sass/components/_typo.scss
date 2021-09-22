@@ -46,6 +46,10 @@ footer {
   }
 }
 
+.fa-color {
+  color: $icone;
+}
+
 /* Vérification si le navigateur supporte la méthode -webkit-text-stroke */
 @supports (-webkit-text-stroke: 2px black) {
   .fa-heart {
