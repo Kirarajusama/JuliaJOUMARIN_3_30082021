@@ -1,5 +1,5 @@
 .container {
-  max-width: $bp_xs;
+  max-width: 100%;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -10,6 +10,11 @@
   &.inverted {
     background: $fond;
   }
+}
+
+.grid {
+  @include flex;
+  margin-right: -30px;
 }
 
 .flex {
@@ -32,4 +37,9 @@
     -ms-flex-pack: justify;
     justify-content: space-between;
   }
+}
+
+
+@each $modifieur,$bp in $map {
+  @include classe_col($modifieur,$bp, $colonne);
 }

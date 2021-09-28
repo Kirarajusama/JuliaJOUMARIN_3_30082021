@@ -10,10 +10,20 @@ $fondBody: #FFF;
 $fond: #F6F6F6;
 
 /* BREAKPOINTS */
-$bp_xs: 320px;
-$bp_sm: 481px;
-$bp_md: 769px;
-$bp_lg: 1025px;
+$bp_xs: 320;
+$bp_sm: 481;
+$bp_md: 769;
+$bp_lg: 1025;
+
+$colonne: 12;
+
+$map: (
+        '': 0,          /* Tous les appareils */
+        '-xs' : $bp_xs, /* Téléphone */
+        '-sm' : $bp_sm, /* Tablette */
+        '-md' : $bp_sm, /* Petit ordinateur */
+        '-lg' : $bp_lg, /* Grand ordinateur */
+);
 
 /* LOADER */
 $loader_animation_duration: 3s;
